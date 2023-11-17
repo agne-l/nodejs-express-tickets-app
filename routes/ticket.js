@@ -8,7 +8,7 @@ import auth from "../middleware/auth.js";
 
 const router = express.Router();
 
-router.post("/", CREATE_TICKET);
+router.post("/", auth, CREATE_TICKET);
 router.get("/", auth, GET_ALL_TICKETS);
 router.post("/:id/buy", auth, BUY_TICKET);
 
